@@ -58,3 +58,89 @@ label {
 button {
   grid-column: 1 / -1;
 }
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+  gap: 1em;
+}
+
+.projects article {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 3;
+}
+
+.projects h2 {
+  margin: 0;
+}
+
+h1 {
+  font-size: 400%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+.resume h2 {
+  border-bottom: 0.2em solid var(--color-accent);
+  padding-bottom: 0.2em;
+}
+
+.resume section {
+  margin-block: 3em;
+}
+
+.resume article {
+  padding-bottom: 1.5em;
+  margin-bottom: 1.5em;
+  border-bottom: 1px solid oklch(85% 3% 245);
+}
+
+.resume h3 {
+  font-size: 1.3em;
+  font-weight: 700;
+}
+
+.resume .role {
+  font-style: italic;
+}
+
+.resume .date {
+  font-size: 0.9em;
+  color: gray;
+}
+
+.resume .location {
+  font-size: 0.95em;
+}
+
+.resume .skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75em;
+  list-style: none;
+  padding: 0;
+}
+
+.resume .skills-list li {
+  border: 1px solid var(--color-accent);
+  border-radius: 1em;
+  padding: 0.4em 0.8em;
+}
+
+.resume {
+  max-width: 85ch;
+  margin-inline: max(1em, (100% - 85ch) / 2);
+}
+
+.resume article p {
+  margin-block: 0.4em;
+}
