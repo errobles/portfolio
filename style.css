@@ -1,4 +1,5 @@
 html {
+  color-scheme: light dark;
   --color-accent: oklch(61.927% 0.14347 245.646);
   accent-color: var(--color-accent);
 }
@@ -13,9 +14,10 @@ body {
 }
 
 nav {
+  --border-color: oklch(50% 10% 200 / 40%);
   display: flex;
   margin-bottom: 1em;
-  border-bottom: 1px solid oklch(80% 3% 200);
+  border-bottom: 1px solid var(--border-color);
 }
 
 nav a {
@@ -27,19 +29,20 @@ nav a {
 }
 
 nav a.current {
-  border-bottom: 0.4em solid oklch(80% 3% 200);
+  border-bottom: 0.4em solid var(--border-color);
   padding-bottom: 0.1em;
 }
 
 nav a:hover {
   border-bottom: 0.4em solid var(--color-accent);
   padding-bottom: 0.1em;
-  background-color: oklch(from var(--color-accent) 95% 5% h);
+  background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
 }
 
 input,
 textarea,
-button {
+button,
+select {
   font: inherit;
 }
 
@@ -143,4 +146,20 @@ h6 {
 
 .resume article p {
   margin-block: 0.4em;
+}
+
+.color-scheme {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 80%;
+}
+
+@media (max-width: 1100px) {
+  .color-scheme {
+    position: static;
+    width: fit-content;
+    margin-left: auto;
+    margin-bottom: 1rem;
+  }
 }
